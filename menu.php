@@ -23,10 +23,9 @@ button {
 <div class="wrap">
  <h1>Opciones</h1>
  <p>Inserte la palabara que desee sustituir en sus post</p>
- <form action="http://3.17.132.252/wp5/wp-content/plugins/plugin-dani/recoger.php" method="post">
+ <form action="<?php $_SERVER["HTTP_HOST"]; ?>/wp5/wp-content/plugins/plugin-dani/recoger.php" method="post">
   <p>Palabra a sustituir: <input type="text" name="palabra_inicio"/></p>
   <p>Palabra a mostrar: <input type="text" name="palabra_mostrar"/></p>
   <button type="submit">Guardar</button>
 </form>
 </div>
-

@@ -11,30 +11,29 @@ License:     GPL2 etc
 License URI: http://license.es
 */
 
-//Accion para crear la tabla cuando se activa el plugin
+//Accion para crear una tabla cuando se activa el plugin
 function tabla($post_ID) {
-  //traemos la variable global wpdb para conectarnos a la base de datos
-  global $wpdb;
-  //traemos el charset para que los caracteres sean los de nuestro idioma
-  $charset_collate = $wpdb->get_charset_collate();
 
-  // le añado el prefijo a la tabla
-  $table_name = $wpdb->prefix . 'plugindani';
+    global $wpdb;
+    $charset_collate = $wpdb->get_charset_collate();
 
-  // creamos la sentencia sql
-  $sql = "CREATE TABLE IF NOT EXISTS $table_name (
-   palabra1 text NOT NULL,
-   palabra2 text NOT NULL,
-   PRIMARY KEY (palabra1)
-  ) $charset_collate;";
+    // le añado el prefijo a la tabla.
+    $table_name = $wpdb->prefix . 'plugindani';
 
-  //Importamos el upgrade.php para usar el dbDelta
-  require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-  //Ejecutamos el sql
-  dbDelta( $sql );
-  return $post_ID;
+    // creamos la sentencia sql
+    $sql ="CREATE TABLE IF NOT EXISTS $table_name (
+      palabra1 varchar(80),
+      palabra2 varchar(80),
+      PRIMARY KEY(palabra1)
+     ) $charset_collate;";
+
+    //Importamos el upgrade.php para usar el dbDelta
+    require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+    //Ejecutamos el sql
+    dbDelta( $sql );
+    return $post_ID;
 }
-//Acción cuando se activa wp-renyme...Hay que poner nombre y archivo .php
+
 add_action('activate_plugin-dani/main.php', 'tabla');
 
 
