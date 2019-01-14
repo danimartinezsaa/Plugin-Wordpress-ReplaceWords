@@ -1,25 +1,24 @@
 <style type="text/css"> 
-
+/*borde del formulario*/
 form {
     padding: 1em;
     border: 1px solid #CCC;
     border-radius: 2em;
 }
 
+/*Efecto al seleccionar*/
 input:focus, textarea:focus {
     border-color: #000;
 }
 
+/*Margen extra*/
 button {
-    /* Este margen extra representa aproximadamente el mismo espacio que el espacio
-       entre los labels y sus campos de texto */
-    margin-left: .5em;
-    margin-top: .5em;
+    margin-left: 16em;
+    margin-top: 1em;
 }
-
 </style> 
 
-
+<!-- formulario que pide la palabra a reemplazar y la palabra que se muestra y envía los valores a recoger.php mediante post -->
 <div class="wrap">
  <h1>Opciones</h1>
  <p>Inserte la palabara que desee sustituir en sus post</p>
