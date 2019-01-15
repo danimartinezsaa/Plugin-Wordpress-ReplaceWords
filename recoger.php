@@ -21,7 +21,7 @@ function insert(){
     		'palabra2' => $palabra2
     		)
     );
-    
+
     //url del menú
     $url = "http://" . $_SERVER["HTTP_HOST"] . "/wp5/wp-admin/admin.php?page=plugin-dani%2Fmenu.php";
     //volvemos al menú
