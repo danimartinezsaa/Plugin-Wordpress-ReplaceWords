@@ -58,8 +58,8 @@ function sustituir( $text ) {
     $results1 = $wpdb->get_results( "SELECT palabra1 FROM $table_name", OBJECT );
     $results2 = $wpdb->get_results( "SELECT palabra2 FROM $table_name", OBJECT );
 	
-    $search = array("o");
-    $replace= array("o");
+    $search = array();
+    $replace= array();
     
 	for($i=0;$i<count($results1); $i++) {
         array_push($search,$results1[$i]->palabra1);
