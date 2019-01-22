@@ -1,12 +1,19 @@
- <?php 
+ <?php
+    //Consulta para recibir las palabras a sustituir y las palabras por las que la sustituimos
+    
     global $wpdb;
     $table_name = $wpdb->prefix . 'plugindani';
     $busqueda = $wpdb->get_results( "SELECT palabra1 FROM $table_name", OBJECT );
+    $busqueda2 = $wpdb->get_results( "SELECT palabra2 FROM $table_name", OBJECT );
     
+    //Array para, después, mostrar el resultado en una lista
     $search = array();
+    $search2= array();
     
 	for($i=0;$i<count($busqueda); $i++) {
         array_push($search,$busqueda[$i]->palabra1);
+        array_push($search2,$busqueda2[$i]->palabra2);
+        
 	};
 	
 ?>
@@ -58,8 +65,9 @@ button {
   <h2>Palabras añadidas:</h2>
   <ul class="lista-plugin">
    <?php
+        //Mostramos el resultado de la consulta
         for($i=0;$i<count($search); $i++) {
-            echo '<li type="circle">'.$search[$i].'</li>';
+            echo '<li type="circle">'.$search[$i].' -> '.$search2[$i].'</li>';
 	    };  
 	?>
   </ul>
