@@ -48,6 +48,11 @@ button {
     margin-left: 16em;
     margin-top: 1em;
 }
+
+#buttonborrar{
+    margin-left: 1em;
+    margin-bottom:1em;
+}
 </style> 
 
 <!--Formulario y lista para introducir y ver las palabras introducidas-->
@@ -60,6 +65,7 @@ button {
   <p>Palabra a mostrar: <input type="text" name="palabra_mostrar"/></p>
   <button type="submit">Guardar</button>
  </form>
+ 
  <!--Lista para ver el contenido de la tabla-->
  <div class="lista-anadidos">
   <h2>Palabras añadidas:</h2>
@@ -71,5 +77,13 @@ button {
 	    };  
 	?>
   </ul>
+  
+    
+ <!-- formulario que pide la palabra a borrar en la tabla -->
+ <p>Inserte la palabara que desea borrar</p>
+ <form action="<?php $_SERVER["HTTP_HOST"]; ?>/wp5/wp-content/plugins/plugin-dani/borrar.php" method="post">
+  <input type="text" name="palabra_borrar"/>
+  <button id="buttonborrar" type="submit">Borrar</button>
+ </form>
  </div>
 </div>
